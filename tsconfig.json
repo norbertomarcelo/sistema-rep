@@ -6,17 +6,6 @@
     "removeComments": true,
     "strictPropertyInitialization": false,
     "baseUrl": "./src",
-    "paths": {
-      "@database/*": [
-        "database/*"
-      ],
-      "@modules/*": [
-        "modules/*"
-      ],
-      "@routes/*": [
-        "routes/*"
-      ],
-    },
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

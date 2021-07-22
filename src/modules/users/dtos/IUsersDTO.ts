@@ -1,4 +1,4 @@
-import { User } from '@modules/users/entities/User';
+import { User } from '../entities/User';
 
 interface ICreateUserDTO {
   user_name: string;

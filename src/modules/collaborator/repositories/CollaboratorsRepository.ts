@@ -35,7 +35,21 @@ export class CollaboratorsRepository implements ICollaboratorsRepository {
   }
 
   async update({ name, pis, id }: ICreateCollaboratorDTO): Promise<void> {
-    console.log(id);
-    await this.repository.update(id, { name: name, pis: pis });
+    await this.repository
+      .createQueryBuilder()
+      .update(Collaborator)
+      .set({ name: name, pis: pis })
+      .where('id = :id', { id })
+      .execute();
+  }
+
+  async destroy(id: string): Promise<void> {
+    await this.repository.delete({ id });
+  }
+
+  async listAll(): Promise<Collaborator[]> {
+    const collaborators = await this.repository.find();
+
+    return collaborators;
   }
 }
